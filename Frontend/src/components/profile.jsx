@@ -16,9 +16,9 @@ const Profile = ({ user, onLogout }) => {
   if (!userData || !userData.user) {
     return <p className="text-center mt-10">Loading user data...</p>;
   }
-
+ 
   return (
-    <>
+    <div className="flex flex-row gap-10 justify-between items-center ">
       <div className="max-w-md mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
         <h2 className="text-2xl font-semibold flex items-center gap-2 mb-4">
           <FaUserCircle className="text-blue-500" />{" "}
@@ -55,7 +55,7 @@ const Profile = ({ user, onLogout }) => {
           <p className="text-gray-600 pb-4">
             Attendance Percentage: {Math.floor((userData?.user?.totalPresentDay*100)/userData?.user?.totalWorkingDay) || ""}%
           </p>
-          <p className="text-gray-600 pb-4">
+          <p className="text-gray-600 pb-4 uppercase">
             Role: {userData?.user?.role || "User"}
           </p>
           <button
@@ -71,7 +71,7 @@ const Profile = ({ user, onLogout }) => {
         <Admin />
       </div>
       : ""}
-    </>
+    </div>
   );
 };
 

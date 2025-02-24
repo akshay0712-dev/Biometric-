@@ -17,13 +17,13 @@ app.use(cookieParser())
 
 // routes import
 import userRoute from "./routes/user.routes.js";
-import biometricRouter from "./routes/biometric.routes.js";
+import admin from "./routes/admin.routes.js";
 
 
 
 // routes declaration
 app.use("/api/v1/users", userRoute)
-app.use("/api/v1/biometric", biometricRouter)
+app.use("/api/v1/admin", admin)
 
 
 export { app }
