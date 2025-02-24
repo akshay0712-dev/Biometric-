@@ -29,7 +29,7 @@ const Profile = ({ user, onLogout }) => {
             <img
               src={userData.user.avatar}
               alt="User Avatar"
-              className="w-24 h-24 mx-auto rounded-full"
+              className="w-24 h-24 mx-auto rounded-full hover:scale-125 shadow-lg"
             />
           ) : (
             <FaUserCircle className="text-gray-400 text-6xl mx-auto" />

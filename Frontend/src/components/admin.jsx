@@ -94,7 +94,7 @@ const Admin = () => {
 
           <button
             type="submit"
-            className="mt-4 p-2 bg-blue-600 rounded text-white hover:bg-blue-700"
+            className="mt-4 p-2 bg-red-500 rounded text-white hover:bg-red-600"
           >
             Submit
           </button>
