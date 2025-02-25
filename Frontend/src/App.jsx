@@ -9,7 +9,9 @@ function ErrorPage() {
   return (
     <div className="h-[30vh] flex flex-col justify-evenly items-center">
       <h1 className="text-3xl text-center">404 - Page Not Found</h1>
-      <p className="text-lg md:text-2xl text-center">The page you are looking for does not exist.</p>
+      <p className="text-lg md:text-2xl text-center">
+        The page you are looking for does not exist.
+      </p>
     </div>
   );
 }
@@ -38,27 +40,31 @@ function App() {
       path: "/",
       element: (
         <>
-          <div 
-          className="min-h-screen flex flex-col items-center justify-center bg-gray-100 space-y-6" 
-          // style={{ backgroundImage: "url('/collageBG.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+          <div
+            className="min-h-screen flex flex-col items-center justify-center bg-gray-100 space-y-6"
+            // style={{ backgroundImage: "url('/collageBG.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
           >
-      {!user ? (
-        <>
-          <h1 className="text-5xl font-bold pt-14 text-black">Welcome! Please Login</h1>
-          
-          <LoginForm onLogin={handleLogin} />
-        </>
-      ) : (
-        <Profile user={user} onLogout={handleLogout} />
-      )}
-    </div>
+            {!user ? (
+              <>
+                <h1 className="text-5xl font-bold pt-14 text-black">
+                  Welcome! Please Login
+                </h1>
+
+                <LoginForm onLogin={handleLogin} />
+              </>
+            ) : (
+              <Profile user={user} onLogout={handleLogout} />
+            )}
+          </div>
         </>
       ),
     },
     {
       path: "/register",
-      element: (        
-        <RegisterForm />
+      element: (
+        <div className="min-h-[100vh] min-w-[100vw]">
+          <RegisterForm />
+        </div>
       ),
     },
   ]);
@@ -66,7 +72,6 @@ function App() {
   return (
     <RouterProvider router={router}>
       {router.currentRoute ? router.currentRoute.element : <ErrorPage />}
-
     </RouterProvider>
   );
 }

@@ -18,7 +18,7 @@ const Profile = ({ user, onLogout }) => {
   }
  
   return (
-    <div className="flex flex-col md:flex-row gap-10 justify-between items-start ">
+    <div className="flex flex-col md:flex-row gap-10 justify-between items-start">
       <div className="max-w-md mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
         <h2 className="text-2xl font-semibold flex items-center gap-2 mb-4">
           <FaUserCircle className="text-blue-500" />{" "}

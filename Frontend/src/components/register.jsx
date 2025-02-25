@@ -87,9 +87,8 @@ const RegisterForm = () => {
     <>
     
     <BackgroundLines className="flex items-center justify-center absolute z-[-2] w-full flex-col px-4 min-h-[100vh] min-w-[100vw]">
-      
     </BackgroundLines >
-      <div className="max-w-md mx-auto mt-10 p-6 bg-[#ffffff00] shadow-lg rounded-lg">
+      <div className="max-w-md mx-auto mt-10 p-6 bg-[#ffffff00] shadow-lg rounded-lg ">
         <h2 className="text-2xl font-semibold flex items-center gap-2 mb-4">
           <FaUser className="text-blue-500" /> Register
         </h2>

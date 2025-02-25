@@ -117,7 +117,7 @@ const Admin = () => {
   };
 
   return (
-    <div className="flex flex-col p-8 h-full justify-center">
+    <div className="flex flex-col p-8 h-full justify-center ">
       <div className="bg-white shadow-lg mb-7 rounded-lg text-2xl p-4">
         <h1 className="mb-4 font-semibold">Admin Panel</h1>
 
