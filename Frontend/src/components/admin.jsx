@@ -108,7 +108,7 @@ const Admin = () => {
             <tr className="bg-gray-200">
               <th className="py-2 px-4 border">ID</th>
               <th className="py-2 px-4 border ">Name</th>
-              <th className="py-2 px-4 border ">Email</th>
+              <th className="py-2 px-4 hidden md:block border ">Email</th>
               <th className="py-2 px-4 border">Total Present Day</th>
               <th className="py-2 px-4 border">Total Working Day</th>
               <th className="py-2 px-4 border">Attendance Percentage</th>
@@ -120,7 +120,7 @@ const Admin = () => {
                 <tr key={user.id} className="hover:bg-gray-100">
                   <td className="py-2 px-4 border">{user.rollNo}</td>
                   <td className="py-2 px-4 border uppercase">{user.fullName}</td>
-                  <td className="py-2 px-4 border lowercase">{user.email}</td>
+                  <td className="py-2 px-4 border hidden md:block lowercase">{user.email}</td>
                   <td className="py-2 px-4 border">{user.totalPresentDay}</td>
                   <td className="py-2 px-4 border">{user.totalWorkingDay}</td>
                   <td className="py-2 px-4 border">{Math.floor((user.totalPresentDay*100)/user.totalWorkingDay)}%</td>

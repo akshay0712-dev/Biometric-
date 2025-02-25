@@ -38,7 +38,7 @@ const LoginForm = ({ onLogin }) => {
   };
 
   return (
-    <div className="min-w-[100vw] min-h-[100vh]" >
+    <div className="min-w-[100vw] min-h-[100vh] pt-8" >
       <div className="max-w-md mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
         <h2 className="text-2xl font-semibold flex items-center gap-2 mb-4">
           <FaSignInAlt className="text-blue-500" /> Login

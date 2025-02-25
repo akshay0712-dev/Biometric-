@@ -40,11 +40,11 @@ function App() {
         <>
           <div 
           className="min-h-screen flex flex-col items-center justify-center bg-gray-100 space-y-6" 
-          // style={{ backgroundImage: "url('/collageBG.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+          style={{ backgroundImage: "url('/collageBG.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
           >
       {!user ? (
         <>
-          <h1 className="text-2xl font-bold text-black">Welcome! Please Login</h1>
+          <h1 className="text-5xl font-bold pt-14 text-black">Welcome! Please Login</h1>
           
           <LoginForm onLogin={handleLogin} />
         </>
