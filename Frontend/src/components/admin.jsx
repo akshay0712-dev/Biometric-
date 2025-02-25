@@ -102,39 +102,329 @@ const Admin = () => {
 
         {message && <p className="mt-4 text-lg text-yellow-400">{message}</p>}
       </div>
-      <div className="overflow-x-auto rounded-lg">
-        <table className="min-w-full bg-white border-collapse border border-gray-300 shadow-lg">
-          <thead>
-            <tr className="bg-gray-200">
-              <th className="py-2 px-4 border">ID</th>
-              <th className="py-2 px-4 border ">Name</th>
-              <th className="py-2 px-4 hidden md:block border ">Email</th>
-              <th className="py-2 px-4 border">Total Present Day</th>
-              <th className="py-2 px-4 border">Total Working Day</th>
-              <th className="py-2 px-4 border">Attendance Percentage</th>
-            </tr>
-          </thead>
-          <tbody>
-            {allUsers.length > 0 ? (
-              allUsers.map((user) => (
-                <tr key={user.id} className="hover:bg-gray-100">
-                  <td className="py-2 px-4 border">{user.rollNo}</td>
-                  <td className="py-2 px-4 border uppercase">{user.fullName}</td>
-                  <td className="py-2 px-4 border hidden md:block lowercase">{user.email}</td>
-                  <td className="py-2 px-4 border">{user.totalPresentDay}</td>
-                  <td className="py-2 px-4 border">{user.totalWorkingDay}</td>
-                  <td className="py-2 px-4 border">{Math.floor((user.totalPresentDay*100)/user.totalWorkingDay)}%</td>
-                </tr>
-              ))
-            ) : (
-              <tr>
-                <td colSpan="3" className="py-4 px-4 text-center text-gray-500">
-                  No users found.
-                </td>
+
+      {/* Data of Computer Science Students 5< */}
+      <div className="">
+        <h2 className="text-2xl font-semibold mb-4">Computer Science Students</h2>
+        <div className="overflow-x-auto rounded-lg">
+          <table className="min-w-full bg-white border-collapse border border-gray-300 shadow-lg">
+            <thead>
+              <tr className="bg-gray-200">
+                <th className="py-2 px-4 border">ID</th>
+                <th className="py-2 px-4 border ">Name</th>
+                <th className="py-2 px-4 hidden md:block border ">Email</th>
+                <th className="py-2 px-4 border">Total Present Day</th>
+                <th className="py-2 px-4 border">Total Working Day</th>
+                <th className="py-2 px-4 border">Attendance Percentage</th>
               </tr>
-            )}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {allUsers.length > 0 ? (
+                 allUsers
+                 .filter((user) => Math.floor(user.rollNo/100) == 245) // Filter out CSE users
+                 .map((user) => (
+                  
+                  <tr key={user.id} className="hover:bg-gray-100">
+                    <td className="py-2 px-4 border">{user.rollNo}</td>
+                    <td className="py-2 px-4 border uppercase">
+                      {user.fullName}
+                    </td>
+                    <td className="py-2 px-4 border hidden md:block lowercase">
+                      {user.email}
+                    </td>
+                    <td className="py-2 px-4 border">{user.totalPresentDay}</td>
+                    <td className="py-2 px-4 border">{user.totalWorkingDay}</td>
+                    <td className="py-2 px-4 border">
+                      {Math.floor(
+                        (user.totalPresentDay * 100) / user.totalWorkingDay
+                      )}
+                      %
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td
+                    colSpan="3"
+                    className="py-4 px-4 text-center text-gray-500"
+                  >
+                    No users found.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Data of Computer Science AI & ML Students 6 */}
+      <div className="my-8">
+        <h2 className="text-2xl font-semibold mb-4">Computer Science AI & ML Students</h2>
+        <div className="overflow-x-auto rounded-lg">
+          <table className="min-w-full bg-white border-collapse border border-gray-300 shadow-lg">
+            <thead>
+              <tr className="bg-gray-200">
+                <th className="py-2 px-4 border">ID</th>
+                <th className="py-2 px-4 border ">Name</th>
+                <th className="py-2 px-4 hidden md:block border ">Email</th>
+                <th className="py-2 px-4 border">Total Present Day</th>
+                <th className="py-2 px-4 border">Total Working Day</th>
+                <th className="py-2 px-4 border">Attendance Percentage</th>
+              </tr>
+            </thead>
+            <tbody>
+              {allUsers.length > 0 ? (
+                 allUsers
+                 .filter((user) => Math.floor(user.rollNo/100) == 246) // Filter out CSE users
+                 .map((user) => (
+                  
+                  <tr key={user.id} className="hover:bg-gray-100">
+                    <td className="py-2 px-4 border">{user.rollNo}</td>
+                    <td className="py-2 px-4 border uppercase">
+                      {user.fullName}
+                    </td>
+                    <td className="py-2 px-4 border hidden md:block lowercase">
+                      {user.email}
+                    </td>
+                    <td className="py-2 px-4 border">{user.totalPresentDay}</td>
+                    <td className="py-2 px-4 border">{user.totalWorkingDay}</td>
+                    <td className="py-2 px-4 border">
+                      {Math.floor(
+                        (user.totalPresentDay * 100) / user.totalWorkingDay
+                      )}
+                      %
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td
+                    colSpan="3"
+                    className="py-4 px-4 text-center text-gray-500"
+                  >
+                    No users found.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Data of Civil Students 1 */}
+      <div className="my-8">
+        <h2 className="text-2xl font-semibold mb-4">Civil Students</h2>
+        <div className="overflow-x-auto rounded-lg">
+          <table className="min-w-full bg-white border-collapse border border-gray-300 shadow-lg">
+            <thead>
+              <tr className="bg-gray-200">
+                <th className="py-2 px-4 border">ID</th>
+                <th className="py-2 px-4 border ">Name</th>
+                <th className="py-2 px-4 hidden md:block border ">Email</th>
+                <th className="py-2 px-4 border">Total Present Day</th>
+                <th className="py-2 px-4 border">Total Working Day</th>
+                <th className="py-2 px-4 border">Attendance Percentage</th>
+              </tr>
+            </thead>
+            <tbody>
+              {allUsers.length > 0 ? (
+                 allUsers
+                 .filter((user) => Math.floor(user.rollNo/100) == 241) // Filter out CSE users
+                 .map((user) => (
+                  
+                  <tr key={user.id} className="hover:bg-gray-100">
+                    <td className="py-2 px-4 border">{user.rollNo}</td>
+                    <td className="py-2 px-4 border uppercase">
+                      {user.fullName}
+                    </td>
+                    <td className="py-2 px-4 border hidden md:block lowercase">
+                      {user.email}
+                    </td>
+                    <td className="py-2 px-4 border">{user.totalPresentDay}</td>
+                    <td className="py-2 px-4 border">{user.totalWorkingDay}</td>
+                    <td className="py-2 px-4 border">
+                      {Math.floor(
+                        (user.totalPresentDay * 100) / user.totalWorkingDay
+                      )}
+                      %
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td
+                    colSpan="3"
+                    className="py-4 px-4 text-center text-gray-500"
+                  >
+                    No users found.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Data of Mechanical Students 2 */}
+      <div className="my-8">
+        <h2 className="text-2xl font-semibold mb-4">Mechanical Students</h2>
+        <div className="overflow-x-auto rounded-lg">
+          <table className="min-w-full bg-white border-collapse border border-gray-300 shadow-lg">
+            <thead>
+              <tr className="bg-gray-200">
+                <th className="py-2 px-4 border">ID</th>
+                <th className="py-2 px-4 border ">Name</th>
+                <th className="py-2 px-4 hidden md:block border ">Email</th>
+                <th className="py-2 px-4 border">Total Present Day</th>
+                <th className="py-2 px-4 border">Total Working Day</th>
+                <th className="py-2 px-4 border">Attendance Percentage</th>
+              </tr>
+            </thead>
+            <tbody>
+              {allUsers.length > 0 ? (
+                 allUsers
+                 .filter((user) => Math.floor(user.rollNo/100) == 242) // Filter out CSE users
+                 .map((user) => (
+                  
+                  <tr key={user.id} className="hover:bg-gray-100">
+                    <td className="py-2 px-4 border">{user.rollNo}</td>
+                    <td className="py-2 px-4 border uppercase">
+                      {user.fullName}
+                    </td>
+                    <td className="py-2 px-4 border hidden md:block lowercase">
+                      {user.email}
+                    </td>
+                    <td className="py-2 px-4 border">{user.totalPresentDay}</td>
+                    <td className="py-2 px-4 border">{user.totalWorkingDay}</td>
+                    <td className="py-2 px-4 border">
+                      {Math.floor(
+                        (user.totalPresentDay * 100) / user.totalWorkingDay
+                      )}
+                      %
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td
+                    colSpan="3"
+                    className="py-4 px-4 text-center text-gray-500"
+                  >
+                    No users found.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      {/* Data of Electrical Students 3 */}
+      <div className="my-8">
+        <h2 className="text-2xl font-semibold mb-4">Electrical Students</h2>
+        <div className="overflow-x-auto rounded-lg">
+          <table className="min-w-full bg-white border-collapse border border-gray-300 shadow-lg">
+            <thead>
+              <tr className="bg-gray-200">
+                <th className="py-2 px-4 border">ID</th>
+                <th className="py-2 px-4 border ">Name</th>
+                <th className="py-2 px-4 hidden md:block border ">Email</th>
+                <th className="py-2 px-4 border">Total Present Day</th>
+                <th className="py-2 px-4 border">Total Working Day</th>
+                <th className="py-2 px-4 border">Attendance Percentage</th>
+              </tr>
+            </thead>
+            <tbody>
+              {allUsers.length > 0 ? (
+                 allUsers
+                 .filter((user) => Math.floor(user.rollNo/100) == 243) // Filter out CSE users
+                 .map((user) => (
+                  
+                  <tr key={user.id} className="hover:bg-gray-100">
+                    <td className="py-2 px-4 border">{user.rollNo}</td>
+                    <td className="py-2 px-4 border uppercase">
+                      {user.fullName}
+                    </td>
+                    <td className="py-2 px-4 border hidden md:block lowercase">
+                      {user.email}
+                    </td>
+                    <td className="py-2 px-4 border">{user.totalPresentDay}</td>
+                    <td className="py-2 px-4 border">{user.totalWorkingDay}</td>
+                    <td className="py-2 px-4 border">
+                      {Math.floor(
+                        (user.totalPresentDay * 100) / user.totalWorkingDay
+                      )}
+                      %
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td
+                    colSpan="3"
+                    className="py-4 px-4 text-center text-gray-500"
+                  >
+                    No users found.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Data of ECE Students 4 */}
+      <div className="my-8">
+        <h2 className="text-2xl font-semibold mb-4">ECE Students</h2>
+        <div className="overflow-x-auto rounded-lg">
+          <table className="min-w-full bg-white border-collapse border border-gray-300 shadow-lg">
+            <thead>
+              <tr className="bg-gray-200">
+                <th className="py-2 px-4 border">ID</th>
+                <th className="py-2 px-4 border ">Name</th>
+                <th className="py-2 px-4 hidden md:block border ">Email</th>
+                <th className="py-2 px-4 border">Total Present Day</th>
+                <th className="py-2 px-4 border">Total Working Day</th>
+                <th className="py-2 px-4 border">Attendance Percentage</th>
+              </tr>
+            </thead>
+            <tbody>
+              {allUsers.length > 0 ? (
+                 allUsers
+                 .filter((user) => Math.floor(user.rollNo/100) == 244) // Filter out CSE users
+                 .map((user) => (
+                  
+                  <tr key={user.id} className="hover:bg-gray-100">
+                    <td className="py-2 px-4 border">{user.rollNo}</td>
+                    <td className="py-2 px-4 border uppercase">
+                      {user.fullName}
+                    </td>
+                    <td className="py-2 px-4 border hidden md:block lowercase">
+                      {user.email}
+                    </td>
+                    <td className="py-2 px-4 border">{user.totalPresentDay}</td>
+                    <td className="py-2 px-4 border">{user.totalWorkingDay}</td>
+                    <td className="py-2 px-4 border">
+                      {Math.floor(
+                        (user.totalPresentDay * 100) / user.totalWorkingDay
+                      )}
+                      %
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td
+                    colSpan="3"
+                    className="py-4 px-4 text-center text-gray-500"
+                  >
+                    No users found.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
