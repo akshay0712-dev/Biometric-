@@ -4,6 +4,7 @@ import RegisterForm from "./components/register.jsx";
 import LoginForm from "./components/login.jsx";
 import Profile from "./components/profile.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import NavBar from "./components/navBar.jsx";
 
 function ErrorPage() {
   return (
@@ -40,6 +41,7 @@ function App() {
       path: "/",
       element: (
         <>
+          <NavBar />
           <div
             className="min-h-screen flex flex-col items-center justify-center bg-gray-100 space-y-6"
             // style={{ backgroundImage: "url('/collageBG.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
@@ -62,9 +64,12 @@ function App() {
     {
       path: "/register",
       element: (
-        <div className="min-h-[100vh] min-w-[100vw]">
-          <RegisterForm />
-        </div>
+        <>
+          <NavBar />
+          <div className="min-h-[100vh] min-w-[100vw]">
+            <RegisterForm />
+          </div>
+        </>
       ),
     },
   ]);
