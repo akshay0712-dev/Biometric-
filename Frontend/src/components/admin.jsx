@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import SearchUser from "./searchUser";
+
 
 const Admin = () => {
-  const [allUsers, setAllUsers] = useState([]);
   const [attendance, setAttendance] = useState({
     attendanceData: null,
   });
@@ -43,78 +44,9 @@ const Admin = () => {
     }
   };
 
-  const fetchUsers = async () => {
-    console.log("Fetching users...");
 
-    try {
-      const response = await axios.post("http://localhost:8000/api/v1/admin/users");
-      setAllUsers(response.data.data);
-      console.log("Fetched users:", response.data.data);
-    } catch (error) {
-      console.error("Error fetching users:", error);
-    }
-  };
 
-  useEffect(() => {
-    fetchUsers();
-  }, []);
-
-  const departments = [
-    { name: "Computer Science Students", code: 245 },
-    { name: "Computer Science AI & ML Students", code: 246 },
-    { name: "Civil Students", code: 241 },
-    { name: "Mechanical Students", code: 242 },
-    { name: "Electrical Students", code: 243 },
-    { name: "ECE Students", code: 244 },
-  ];
-
-  const StudentTable = ({ title, filterCode }) => {
-    const filteredUsers = allUsers.filter((user) => Math.floor(user.rollNo / 100) === filterCode);
-
-    return (
-      <div className="my-8">
-        <h2 className="text-2xl font-semibold mb-4">{title}</h2>
-        <div className="overflow-x-auto rounded-lg">
-          <table className="min-w-full bg-white border-collapse border border-gray-300 shadow-lg">
-            <thead>
-              <tr className="bg-gray-200">
-                <th className="py-2 px-4 border">ID</th>
-                <th className="py-2 px-4 border">Name</th>
-                <th className="py-2 px-4 hidden md:table-cell border">Email</th>
-                <th className="py-2 px-4 border">Total Present Day</th>
-                <th className="py-2 px-4 border">Total Working Day</th>
-                <th className="py-2 px-4 border">Attendance Percentage</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredUsers.length > 0 ? (
-                filteredUsers.map((user) => (
-                  <tr key={user.id} className="hover:bg-gray-100">
-                    <td className="py-2 px-4 border">{user.rollNo}</td>
-                    <td className="py-2 px-4 border uppercase">{user.fullName}</td>
-                    <td className="py-2 px-4 border hidden md:table-cell lowercase">{user.email}</td>
-                    <td className="py-2 px-4 border">{user.totalPresentDay}</td>
-                    <td className="py-2 px-4 border">{user.totalWorkingDay}</td>
-                    <td className="py-2 px-4 border">
-                      {user.totalWorkingDay > 0
-                        ? `${Math.floor((user.totalPresentDay * 100) / user.totalWorkingDay)}%`
-                        : "N/A"}
-                    </td>
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan="6" className="py-4 px-4 text-center text-gray-500">
-                    No users found.
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    );
-  };
+ 
 
   return (
     <div className="flex flex-col p-8 h-full justify-center ">
@@ -143,15 +75,9 @@ const Admin = () => {
 
         {message && <p className="mt-4 text-lg text-yellow-400">{message}</p>}
       </div>
+      <SearchUser />
 
       
-
-      {/* Display Student Tables */}
-      <div>
-        {departments.map((dept) => (
-          <StudentTable key={dept.code} title={dept.name} filterCode={dept.code} />
-        ))}
-      </div>
     </div>
   );
 };

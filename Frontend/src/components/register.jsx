@@ -75,7 +75,7 @@ const RegisterForm = () => {
       // ✅ Redirect to /login after 2 seconds
       setTimeout(() => {
         navigate("/");
-      }, 2000);
+      }, 1500);
     } catch (error) {
       setMessage(error.response?.data?.message || "Registration failed!");
     } finally {

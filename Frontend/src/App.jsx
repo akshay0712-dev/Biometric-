@@ -43,16 +43,19 @@ function App() {
         <>
           <NavBar />
           <div
-            className="min-h-screen flex flex-col items-center justify-center bg-gray-100 space-y-6"
+            className="min-h-screen flex flex-col items-start justify-start bg-gray-100 space-y-6"
             // style={{ backgroundImage: "url('/collageBG.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
           >
             {!user ? (
               <>
+              <div className="min-h-screen flex flex-col items-center justify-center">
+
                 <h1 className="text-5xl font-bold pt-14 text-black">
                   Welcome! Please Login
                 </h1>
 
                 <LoginForm onLogin={handleLogin} />
+              </div>
               </>
             ) : (
               <Profile user={user} onLogout={handleLogout} />
