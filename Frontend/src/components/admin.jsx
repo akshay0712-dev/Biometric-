@@ -59,6 +59,7 @@ const Admin = () => {
             type="file"
             accept=".xlsx, .xls, .csv"
             onChange={handleFileChange}
+            placeholder="Username"
             className="w-full p-2 border cursor-pointer bg-white shadow-lg rounded-lg"
           />
 

@@ -10,7 +10,7 @@ const NavBar = () => {
             <div className="container mx-auto flex justify-between items-center">
                 {/* Logo */}
                 <div className="flex items-center">
-                    <img src="/geckLogo.png" alt="Logo" className="h-8 w-8 mr-2" />
+                    <img src="/geckLogo.png" alt="Logo" className="h-8 w-8 mr-2 rounded-full" />
                     <span className="text-white text-lg font-semibold">
                         Government Engineering College (GEC), Kishanganj
                     </span>
