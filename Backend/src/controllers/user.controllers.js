@@ -328,6 +328,8 @@ const updateAccoutDetails = asyncHandler(async (req, res) => {
 
 const updateUserAvatar = asyncHandler(async (req, res) => {
   const avatarLocalPath = req.file?.path;
+  // console.log("File received:", req.file);
+  // console.log("Body received:", req.body);  
 
   if (!avatarLocalPath) {
     throw new ApiError(400, "Avatar file is required");
@@ -340,7 +342,7 @@ const updateUserAvatar = asyncHandler(async (req, res) => {
   }
 
   const user = await User.findByIdAndUpdate(
-    req.user?._id,
+    req.user?._id,    
     {
       $set: {
         avatar: avatar.url,
@@ -350,6 +352,7 @@ const updateUserAvatar = asyncHandler(async (req, res) => {
       new: true,
     }
   ).select("-password -refreshTokens");
+  console.log(`user: ${user}`);
 
   return res
     .status(200)
@@ -363,6 +366,6 @@ export {
   refreshAccessToken,
   changeCurrentUserPassword,
   getCurrentUser,
-  updateAccoutDetails,
+  updateAccoutDetails, //ToDo: updateAccountDetails
   updateUserAvatar,
 };
